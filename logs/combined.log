@@ -1,0 +1,5 @@
+[2025-04-10 09:36:53] INFO: 🚀 Server running at http://localhost:4000/graphql
+[2025-04-10 09:38:12] INFO: 🚀 Server running at http://localhost:4000/graphql
+[2025-04-10 09:38:12] INFO: 📡 Subscriptions ready at ws://localhost:${PORT}${server.graphqlPath}
+[2025-04-10 09:38:36] INFO: 🚀 Server running at http://localhost:4000/graphql
+[2025-04-10 09:38:36] INFO: 📡 Subscriptions ready at ws://localhost:${PORT}${server.graphqlPath}
