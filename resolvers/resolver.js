@@ -3,6 +3,8 @@ const { ApolloError } = require("apollo-server-errors");
 const User = require("../models/User");
 const Task = require("../models/Task")
 
+const bcrypt = require("bcryptjs");
+
 const pubSub = new PubSub();
 
 const TASK_ADDED = 'TASK_ADDED';
@@ -75,7 +77,9 @@ const resolvers = {
   Mutation: {
     createUser: async (_, { role, email, password, name, age }) => {
       try {
-        const newUser = new User({ role, email, password, name, age });
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const newUser = new User({ role, email, password: hashedPassword, name, age });
         return await newUser.save();
       } catch (error) {
         throw new ApolloError(error.message, "DATABASE_ERROR");

@@ -6,6 +6,10 @@ const router = express.Router();
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
+router.get("/signup", async (req, res) => {
+  res.send("Hello")
+});
+
 router.post("/signup", async (req, res) => {
   const { role, email, password, name, age } = req.body;
 
